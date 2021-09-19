@@ -15,17 +15,25 @@ function clickHandler() {
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
+  if (initial < 0 || current < 0) {
+    outputBox.innerText = "Price cannot be negative";
+    return;
+  }
+  if (quantity < 0) {
+    outputBox.innerText = "Quantity cannot be negative";
+    return;
+  }
   if (initial > current) {
     var loss = (initial - current) * quantity;
     var lossPercentage = (loss / initial) * 100;
 
-    outputBox.innerHTML = `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`;
+    outputBox.innerText = `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`;
   } else if (current > initial) {
     var profit = (current - initial) * quantity;
     var profitPercentage = (profit / initial) * 100;
 
-    outputBox.innerHTML = `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`;
+    outputBox.innerText = `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`;
   } else {
-    outputBox.innerHTML = `No pain no gain and no gain no pain`;
+    outputBox.innerText = `No pain no gain and no gain no pain`;
   }
 }
