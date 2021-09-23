@@ -29,7 +29,7 @@ h1 {
   padding: 0.5rem 1rem;
   margin: 1rem auto;
   border: 2px solid var(--primary-color);
-  border-radius: 0.9rem;
+  border-radius: 0.4rem;
 }
 .output {
   font-size: x-large;

@@ -7,33 +7,38 @@
 
   <body>
     <div id="app"></div>
-    <h1>Stocks Profile and Loss Calculator 💰</h1>
-    <label class="label"
-      >Intial Price :
-      <input
-        class="input"
-        type="text"
-        id="initialPrice"
-        placeholder="Enter Initial Stock Price "
-    /></label>
-    <label class="label">
-      Quantity of Stocks :
-      <input
-        class="input"
-        type="text"
-        id="stocksQuantity"
-        placeholder="Enter number of Stocks bought"
-      />
-    </label>
-    <label class="label"
-      >Current Price :<input
-        class="input"
-        type="text"
-        id="currentPrice"
-        placeholder="Enter Current price of stocks"
-    /></label>
-    <button id="button" class="button">Check</button>
-    <div id="output" class="output"></div>
+    <form onsubmit="return false">
+      <h1>Stocks Profile and Loss Calculator 💰</h1>
+      <label class="label"
+        >Intial Price :
+        <input
+          class="input"
+          type="text"
+          id="initialPrice"
+          required
+          placeholder="Enter Initial Stock Price "
+      /></label>
+      <label class="label">
+        Quantity of Stocks :
+        <input
+          class="input"
+          type="text"
+          id="stocksQuantity"
+          required
+          placeholder="Enter number of Stocks bought"
+        />
+      </label>
+      <label class="label"
+        >Current Price :<input
+          class="input"
+          type="text"
+          id="currentPrice"
+          required
+          placeholder="Enter Current price of stocks"
+      /></label>
+      <button id="button" class="button">Check</button>
+      <div id="output" class="output"></div>
+    </form>
     <script src="src/index.js"></script>
   </body>
 </html>
