@@ -10,8 +10,11 @@ function clickHandler() {
   var ini = Number(initialPrice.value);
   var qty = Number(stocksQuantity.value);
   var curren = Number(currentPrice.value);
-
-  calculateProfitAndLoss(ini, qty, curren);
+  if (ini && qty && curren) {
+    calculateProfitAndLoss(ini, qty, curren);
+  } else {
+    outputBox.innerText = "";
+  }
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
