@@ -10,22 +10,21 @@ function clickHandler() {
   var ini = Number(initialPrice.value);
   var qty = Number(stocksQuantity.value);
   var curren = Number(currentPrice.value);
-  if (ini && qty && curren) {
+
+  if (ini > 0 && qty > 0 && curren > 0) {
     calculateProfitAndLoss(ini, qty, curren);
+  } else if (ini <= 0 || curren <= 0) {
+    outputBox.innerText = "Price cannot be negative or zero";
+    return;
+  } else if (qty <= 0) {
+    outputBox.innerText = "Quantity cannot be negative or zero";
+    return;
   } else {
     outputBox.innerText = "";
   }
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
-  if (initial < 0 || current < 0) {
-    outputBox.innerText = "Price cannot be negative";
-    return;
-  }
-  if (quantity < 0) {
-    outputBox.innerText = "Quantity cannot be negative";
-    return;
-  }
   if (initial > current) {
     var loss = (initial - current) * quantity;
     var lossPercentage = (loss / initial) * 100;
