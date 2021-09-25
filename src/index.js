@@ -14,12 +14,14 @@ function clickHandler() {
   if (ini && qty && curren) {
     if (ini > 0 && qty > 0 && curren > 0) {
       calculateProfitAndLoss(ini, qty, curren);
-    } else {
-      outputBox.innerText = "Values cannot be negative";
+    } else if (ini < 0 || curren < 0) {
+      outputBox.innerText = "Price cannot be negative";
+    } else if (qty < 0) {
+      outputBox.innerText = "Quantity cannot be negative";
     }
   } else {
     outputBox.innerText =
-      "Please enter all the values(values must be greater than 0)";
+      "Please enter all the values(all values must be greater than 0)";
   }
 }
 
