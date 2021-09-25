@@ -11,16 +11,15 @@ function clickHandler() {
   var qty = Number(stocksQuantity.value);
   var curren = Number(currentPrice.value);
 
-  if (ini > 0 && qty > 0 && curren > 0) {
-    calculateProfitAndLoss(ini, qty, curren);
-  } else if (ini <= 0 || curren <= 0) {
-    outputBox.innerText = "Price cannot be negative or zero";
-    return;
-  } else if (qty <= 0) {
-    outputBox.innerText = "Quantity cannot be negative or zero";
-    return;
+  if (ini && qty && curren) {
+    if (ini > 0 && qty > 0 && curren > 0) {
+      calculateProfitAndLoss(ini, qty, curren);
+    } else {
+      outputBox.innerText = "Values cannot be negative";
+    }
   } else {
-    outputBox.innerText = "";
+    outputBox.innerText =
+      "Please enter all the values(values must be greater than 0)";
   }
 }
 
